@@ -1,33 +1,18 @@
-import {
-  ADD_DRINK,
-  ADD_SANDWICH,
-  ADD_CHIPS,
-  REMOVE_DRINK,
-  REMOVE_SANDWICH,
-  REMOVE_CHIPS
-} from '../actions/lunchActions';
+import { addDrink, removeDrink, addSandwich, removeSandwich, addChips, removeChips } from '../actions/lunchActions';
+import reducer from './lunchReducer';
 
-const initialState = {
-  drink: null,
-  sandwich: null,
-  chips: null
-};
+describe('lunch reducer tests', () => {
 
-export default function reducer(state = initialState, action) {
-  switch(action.type) {
-    case ADD_DRINK:
-      return { ...state, drink: action.payload };
-    case REMOVE_DRINK:
-      return { ...state, drink: null };
-    case ADD_CHIPS:
-      return { ...state, chips: action.payload };
-    case REMOVE_CHIPS:
-      return { ...state, chips: null };
-    case ADD_SANDWICH:
-      return { ...state, sandwich: action.payload };
-    case REMOVE_SANDWICH:
-      return { ...state, sandwich: null };
-    default:
-      return state;
-  }
-}
+  it('adds a drink', () => {
+    const initialState = {
+      drink: null
+    };
+
+    const updatedState = reducer(initialState, addDrink('water'));
+
+    expect(updatedState).toEqual({
+      drink: 'water'
+    });
+  });
+
+});
