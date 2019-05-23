@@ -3,6 +3,12 @@ import { REMOVE_POST } from '../actions/postActions';
 
 const initialState = {};
 
+function removeComments(state, postId) {
+  const newState = { ...state };
+  delete newState[postId];
+  return newState;
+}
+
 export default function commentReducer(state = initialState, action) {
   switch(action.type) {
     case ADD_COMMENT:
@@ -22,8 +28,7 @@ export default function commentReducer(state = initialState, action) {
         ]
       };
     case REMOVE_POST: 
-      delete state[action.payload];
-      return state;
+      return removeComments(state, action.payload);
     default:
       return state;
   }

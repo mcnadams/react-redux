@@ -31,5 +31,13 @@ describe('comment reducer', () => {
     });
   });
 
+  it('deletes a post', () => {
+    const startingState = {
+      1: ['hi', 'bye'],
+      2: ['no']
+    };
+    const result = reducer(startingState, removePost(1));
+    expect(result).toEqual({ 2: ['no'] });
+  });
 
 });
