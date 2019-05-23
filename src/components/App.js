@@ -10,9 +10,9 @@ import CreatePost from '../containers/CreatePost';
 
 export default function App() {
   return (
-    <Router>
-      <Route path='/' component={AllPosts} />
-      <Route path='/createPost' component={CreatePost} />
-    </Router>
+    <>
+      <AllPosts />
+      <CreatePost />
+    </>
   );
 }
