@@ -6,9 +6,7 @@ import { FaRegTrashAlt } from 'react-icons/fa';
 function Post({ post, deletePost }) {
   return (
     <>
-      {/* <Link to={`/posts/${post.id}`}> */}
-      {post.title}
-      {/* </Link> */}
+      <Link to={`/posts/${post.id}`}>{post.title}</Link>
       <FaRegTrashAlt onClick={deletePost.bind(null, post.id)} />
     </>
   );

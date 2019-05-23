@@ -7,12 +7,17 @@ import {
 } from 'react-router-dom';
 import AllPosts from '../containers/AllPosts';
 import CreatePost from '../containers/CreatePost';
+import DisplayPost from '../containers/DisplayPost';
+import Home from '../containers/Home';
 
 export default function App() {
   return (
-    <>
-      <AllPosts />
-      <CreatePost />
-    </>
+    <Router>
+      <Switch>
+        <Route path='/posts/:id' component={DisplayPost} />
+        <Route exact path='/' component={Home} />
+        <Route path='/createPost' component={CreatePost} />
+      </Switch>
+    </Router>
   );
 }
