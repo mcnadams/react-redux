@@ -30,6 +30,6 @@ describe('post selector tests', () => {
     expect(result).toEqual({ title: 'first post', body: 'I am here', id: 0 });
   });
 
-
+  
 });
 
