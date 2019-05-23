@@ -9,12 +9,12 @@ export default function reducer(state = initialState, action) {
     case REMOVE_POST:
       return [...state.slice(0, action.payload), ...state.slice(action.payload + 1)];
     case UPDATE_POST:
-      return [...state.slice(0, action.payload), 
+      return [...state.slice(0, action.payload.id), 
         {
           ...state[action.payload.id],
           body: action.payload.body
         },
-        ...state.slice(action.payload + 1)];
+        ...state.slice(action.payload.id + 1)];
     default:
       return state;
   }
