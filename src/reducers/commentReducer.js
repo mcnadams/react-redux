@@ -1,4 +1,5 @@
 import { ADD_COMMENT, DELETE_COMMENT } from '../actions/commentActions';
+import { REMOVE_POST } from '../actions/postActions';
 
 const initialState = {};
 
@@ -20,6 +21,9 @@ export default function commentReducer(state = initialState, action) {
           ...state[action.payload.postIndex].slice(action.payload.commentIndex + 1)
         ]
       };
+    case REMOVE_POST: 
+      delete state[action.payload];
+      return state;
     default:
       return state;
   }
