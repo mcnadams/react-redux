@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Comment from './Comment';
+import styles from '../posts/PostForm.css';
 
 function Comments({ comments, deleteComment }) {
   const commentList = comments.map((comment, i) => (
@@ -10,7 +11,7 @@ function Comments({ comments, deleteComment }) {
   ));
 
   return (
-    <ul>
+    <ul className={styles.PostList}>
       {commentList}
     </ul>
   );
