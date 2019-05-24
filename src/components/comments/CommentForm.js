@@ -5,11 +5,11 @@ export default class CommentForm extends PureComponent {
 
   static propTypes = {
     onSubmit: PropTypes.func.isRequired,
-    match: PropTypes.object.isRequired
+    id: PropTypes.number.isRequired
   }
 
   state = {
-    postIndex: decodeURIComponent(this.props.match.params.id),
+    postIndex: this.props.id,
     comment: ''
   }
 
