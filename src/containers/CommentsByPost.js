@@ -3,7 +3,7 @@ import Comments from '../components/comments/Comments';
 import { getComments } from '../selectors/commentSelectors';
 import { deleteComment } from '../actions/commentActions';
 
-const mapStateToProps = (state, postId) => ({
+const mapStateToProps = (state, { postId }) => ({
   comments: getComments(state, postId)
 });
 
