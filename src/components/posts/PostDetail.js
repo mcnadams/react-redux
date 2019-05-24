@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import CreateComment from '../containers/CreateComment';
 
 function PostDetail({ post }) {
   return (
     <section>
       <h1>{post.title}</h1>
       <p>{post.body}</p>
+      <CreateComment />
     </section>
   );
 }
