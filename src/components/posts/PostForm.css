@@ -1,0 +1,29 @@
+.PostForm {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  align-items: center;
+  margin: auto;
+  border: 2px solid lightgrey;
+  padding: 10px;
+  
+  input, textarea {
+    font-size: 1.2em;
+    margin: 3px;
+    width: 80%;
+  }
+
+  button {
+    align-self: flex-end;
+  }
+}
+
+.PostList {
+  margin: auto;
+  list-style: none;
+}
+
+.Post {
+  padding: 3px;
+  color: blue;
+}
