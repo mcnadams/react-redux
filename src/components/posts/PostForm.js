@@ -15,7 +15,6 @@ export default class PostForm extends PureComponent {
   handleSubmit = event => {
     event.preventDefault();
     this.props.onSubmit(this.state.title, this.state.body);
-    console.log(this.state);
     this.setState({ title: '', body: '' });
   }
 

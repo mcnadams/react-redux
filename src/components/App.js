@@ -13,6 +13,7 @@ import Home from '../containers/Home';
 export default function App() {
   return (
     <Router>
+      <Link to='/'>Home</Link>
       <Switch>
         <Route path='/posts/:id' component={DisplayPost} />
         <Route exact path='/' component={Home} />
